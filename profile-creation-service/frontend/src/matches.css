@@ -1,0 +1,17 @@
+.matches_card {
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    height: 100%;
+}
+
+.names {
+    font-weight: 600;
+    float: left;
+}
+
+.match_btn {
+    float: right;
+}

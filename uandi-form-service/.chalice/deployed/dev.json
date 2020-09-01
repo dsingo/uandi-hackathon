@@ -1,0 +1,37 @@
+{
+  "resources": [
+    {
+      "name": "default-role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::837315506606:role/form-service-dev",
+      "role_name": "form-service-dev"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:ap-southeast-2:837315506606:function:form-service-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "whczlpbkuk",
+      "rest_api_url": "https://whczlpbkuk.execute-api.ap-southeast-2.amazonaws.com/api/"
+    },
+    {
+      "name": "api_gateway_custom_domain",
+      "resource_type": "domain_name",
+      "hosted_zone_id": "Z2FDTNDATAQYW2",
+      "alias_domain_name": "d1x3tkets7642.cloudfront.net",
+      "certificate_arn": "arn:aws:acm:us-east-1:837315506606:certificate/12cf430e-97dc-47c4-a86e-9d69c331365a",
+      "security_policy": "TLS_1_2",
+      "domain_name": "api.uandi.cc",
+      "api_mapping": [
+        {
+          "key": "/"
+        }
+      ]
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}

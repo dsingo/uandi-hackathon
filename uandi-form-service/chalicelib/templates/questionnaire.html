@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>{{ nickname }}'s Profile - UandI</title>
+      <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <style>
+        *, html, body {
+          box-sizing: border-box;
+          font-family: 'Open Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        html, body {
+          padding: 0;
+          margin:0;
+          font-size: 18px;
+        }
+        nav {
+          width:100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .title {
+          text-align:center;
+          font-family: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color:rgb(220, 148, 220);
+        }
+        .profile-box {
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .profile-box > h2, p {
+          margin: .6rem .4rem;
+          max-width: 18rem;
+          text-align: center;
+        } 
+        
+        form {
+          display: flex;
+          max-width: 23rem;
+          align-items: center;
+          justify-content: start;
+          flex-direction:column;
+        }
+        form > label {
+          margin: .3rem .4rem;
+          font-weight:600;
+          font-size:.8rem;
+        }
+        form > span {
+          margin: .4rem;
+          margin-top: 0;
+          font-size: .7rem;
+          text-align: center;
+        }
+        form > button {
+          margin: 1rem .5rem;
+          display: block;
+          background:rgb(220, 148, 220);
+          border: none;
+          color: white;
+          padding: .4rem;
+          width:100%;
+          max-width: 6rem;
+          font-family: 'Comfortaa', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          border-radius: .2rem;
+        }
+
+        form > input {
+          border-radius: .2rem;
+          border:grey solid 2px;
+          padding: .15rem .25rem;
+          width: 100%;
+          max-width: 14rem;
+        }
+        form > input:active {
+          border-radius: .2rem;
+          border:rgb(220, 148, 220) solid 2px;
+          padding: .15rem .25rem;
+          width: 100%;
+          max-width: 14rem;
+        }
+      </style>
+    </head>
+  <body>
+    <nav>
+      <h1 class="title">uandi</h1>
+    </nav>
+    <div class="profile-box">
+      <h2>{{ nickname }}</h2>
+      <p>{{ bio }}</p>
+      <form method="POST" action="https://api.uandi.cc/submit_form/{{ pid }}">
+        {% for question in questions %}
+          <label>{{ question }}</label>
+          <input type="hidden" name="question{{ loop.index }}" value="{{ question }}" />
+          <input type="text" input placeholder="Enter answer" name="answer{{ loop.index }}" />
+        {% endfor %}
+          <label>Enter a nickname</label>
+          <input type="text" name="nickname" placeholder="Your nickname" />
+          <label>Your phone number (beginning with +61)</label>
+          <span>Don't worry, we won't share your phone number with anyone.</span>
+          <input type="tel" name="phonenumber" placeholder="+61012345678" />
+        <button type="submit">Submit</button>
+        <span> If {{nickname}} is interested, they will be able to text you over an anonymised number, and you'll be able to end contact at any time.</span>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{
+    "Outputs": {
+      "PhoneTableName": {
+        "Value": {
+          "Ref": "PhoneTable"
+        }
+      }
+    },
+    "Resources": {
+      "PhoneTable": {
+        "Properties": {
+          "AttributeDefinitions": [
+            {
+                "AttributeName":"phonenumber",
+                "AttributeType":"S"
+            }
+          ],
+          "KeySchema": [
+            {
+              "AttributeName": "phonenumber",
+              "KeyType": "HASH"
+            }
+          ],
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": 5,
+            "WriteCapacityUnits": 5
+          }
+        },
+        "Type": "AWS::DynamoDB::Table"
+      }
+    }
+  }

@@ -1,0 +1,28 @@
+.App {
+  font-family: 'Quicksand', sans-serif;
+  background-color: white;
+}
+
+html {
+  background-color: white;
+}
+
+.nav-links {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.nav-link {
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  padding-bottom: 10px;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+{
+    "Outputs": {
+      "FormTableName": {
+        "Value": {
+          "Ref": "FormTable"
+        }
+      },
+      "ProfileBucketName": {
+        "Value": {
+          "Ref": "ProfileBucket"
+        }
+      }
+    },
+    "Resources": {
+      "ProfileBucket": {
+        "Type": "AWS::S3::Bucket"
+      },
+      "FormTable": {
+        "Properties": {
+          "AttributeDefinitions": [
+            {
+                "AttributeName": "Profile ID",
+                "AttributeType": "S"
+            }
+          ],
+          "KeySchema": [
+            {
+                "AttributeName": "Profile ID",
+                "KeyType": "HASH"
+            }
+          ],
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": 5,
+            "WriteCapacityUnits": 5
+          }
+        },
+        "Type": "AWS::DynamoDB::Table"
+      }
+    }
+}

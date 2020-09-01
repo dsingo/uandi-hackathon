@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Questionnaire</h1>
+
+    <head>
+      <title>Questionnaire</title>
+    </head>
+
+    <form method="POST">
+      {% for question in questions %}
+        <label>{{ question }}</label><br>
+        <input type="text" input placeholder="Enter answer" name="{{ loop.index }}" /><br><br>
+      {% endfor %}
+      <button type="submit" class="button">Submit</button>
+    </form>
+
+    {{ answer_1 }}
+    {{ answer_2 }}
+    {{ answer_3 }}
+  </body>
+</html>

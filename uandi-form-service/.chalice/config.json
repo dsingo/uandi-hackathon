@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "app_name": "form-service",
+  "environment_variables": {
+    "FORM_TABLE_NAME":"form-service-FormTable-BX6GHYB0R83U",
+    "PROFILE_BUCKET_NAME":"form-service-profilebucket-1aym9qo60rmol",
+    "PROFILE_DISTRIBUTION_NAME":"E7R7S0NDKAMHJ"
+  },
+  "stages": {
+    "dev": {
+      "api_gateway_custom_domain": {
+        "domain_name": "api.uandi.cc",
+        "certificate_arn": "arn:aws:acm:us-east-1:837315506606:certificate/12cf430e-97dc-47c4-a86e-9d69c331365a"
+      },
+      "api_gateway_stage": "api"
+    }
+  }
+}
